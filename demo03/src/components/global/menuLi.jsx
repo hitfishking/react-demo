@@ -1,6 +1,7 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import {Link} from 'react-router';
+
 class MenuLi extends React.Component{
 	render(){
 		let linkTo = this.props.name =="Home"?"/":"/"+this.props.name;

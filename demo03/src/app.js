@@ -17,10 +17,12 @@ class App extends React.Component{
 				<Nav/>
 				{this.props.children}
 			</div>				
-		)
+		)                                   // data flow从上到下，App object的children参数，由router引擎函数提供；
 	}
 }
 
+//Router,Route相当于配置条目，供底层的router function进行调度；
+// path='/'时App只是框架，没有实质内容，故需要有一个IndexRoute来提供默认页面；
 ReactDOM.render((
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
@@ -29,6 +31,7 @@ ReactDOM.render((
 			<Route path="/Travel" component={Travel}/>
 		</Route>
 	</Router>
-	),document.body
+	),document.body       //挂载在document.body下的<Router>应该是一个路由函数，而不是dom；React中，一切都是函数或class，
+	                       //落到dom上，可以是dom，也可以是函数；
 );
 
